@@ -1,4 +1,4 @@
-package com.example.lab2.config;
+package com.example.lab2;
 
 import com.example.lab2.model.dto.BookDto;
 import com.example.lab2.service.AuthorService;
@@ -22,19 +22,19 @@ public class DataLoader {
 
     private void fillDatabase(){
         countryService.saveCountry("Macedonia", "Europe");
-        countryService.saveCountry("USA", "North America");
         countryService.saveCountry("Canada", "North America");
-        countryService.saveCountry("Argentina", "South America");
+        countryService.saveCountry("USA", "North America");
+        countryService.saveCountry("Peru", "South America");
         countryService.saveCountry("Brazil", "South America");
-        countryService.saveCountry("China", "Asia");
-        countryService.saveCountry("Russia", "Asia");
-        countryService.saveCountry("Italy", "Europe");
         countryService.saveCountry("Norway", "Europe");
+        countryService.saveCountry("Russia", "Asia");
+        countryService.saveCountry("Germany", "Europe");
+        countryService.saveCountry("Japan", "Asia");
 
-        authorService.saveAuthor("Zack", "Woukley", countryService.findById(1L).get());
-        authorService.saveAuthor("Bill", "Effers", countryService.findById(7L).get());
-        authorService.saveAuthor("Jack", "Lengyel", countryService.findById(9L).get());
-        authorService.saveAuthor("Pete", "Davids", countryService.findById(2L).get());
+        authorService.saveAuthor("Jill ", "Jack", countryService.findById(1L).get());
+        authorService.saveAuthor("Jack", "Jill", countryService.findById(7L).get());
+        authorService.saveAuthor("Bob", "Moussa", countryService.findById(9L).get());
+        authorService.saveAuthor("Johnny", "Phillipps", countryService.findById(2L).get());
 
         bookService.saveBook(new BookDto("Book 1", 1L, "BIOGRAPHY", 1));
         bookService.saveBook(new BookDto("Book 2", 2L, "HISTORY", 3));
